@@ -16,7 +16,7 @@ function App() {
         content: content,
         isDone: false
       };
-      setTodos([...todos, newTask]);
+      setTodos(prevTodos => [...prevTodos, newTask]); // Update todos state
     }
   };
 
@@ -32,12 +32,19 @@ function App() {
     setTodos(filteredTodos);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      addTask(event.target.value);
+      event.target.value = ""; // Clear input field after adding task
+    }
+  };
+
   return (
     <div className="container">
       <h1>UMC Study Plan</h1>
       <hr className='hr-solid'/>
       <div className="input-section">
-        <input type="text" id="todo-input" placeholder="스터디 계획을 작성해보세요!" onKeyPress={(event) => event.key === 'Enter' && addTask(event.target.value)} />
+        <input type="text" id="todo-input" placeholder="스터디 계획을 작성해보세요!" onKeyPress={handleKeyPress} />
       </div>
       <div className="lists-container">
         <div className="list-column">
