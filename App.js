@@ -8,21 +8,15 @@ function App() {
     { id: 3, content: "Sleeping", isDone: true },
     { id: 4, content: "Watching You-Tube", isDone: true },
   ]);
-  const [inputValue, setInputValue] = useState("");
-  const addTask = () => {
-    if (inputValue.trim() !== "") {
+
+  const addTask = (content) => {
+    if (content.trim() !== "") {
       const newTask = {
-        content: inputValue,
+        id: todos.length + 1,
+        content: content,
         isDone: false
       };
       setTodos([...todos, newTask]);
-      setInputValue(""); // 입력란 비우기
-    }
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      addTask();
     }
   };
 
@@ -43,14 +37,7 @@ function App() {
       <h1>UMC Study Plan</h1>
       <hr className='hr-solid'/>
       <div className="input-section">
-        <input
-          type="text"
-          id="todo-input"
-          placeholder="스터디 계획을 작성해보세요!"
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          onKeyPress={handleKeyPress}
-        />
+        <input type="text" id="todo-input" placeholder="스터디 계획을 작성해보세요!" onKeyPress={(event) => event.key === 'Enter' && addTask(event.target.value)} />
       </div>
       <div className="lists-container">
         <div className="list-column">
