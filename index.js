@@ -22,6 +22,7 @@ function addTask() {
       };
 
       taskItem.appendChild(doneButton);
+
       document.getElementById("todo-list").appendChild(taskItem);
 
       taskInput.value = "";
