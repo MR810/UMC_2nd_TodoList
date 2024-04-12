@@ -1,0 +1,88 @@
+* {
+  background-color: #ecf0f6;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.hr-solid {
+  border: 0px;
+  margin: 20px auto;
+  border-top: 2px solid #e1e8f2;
+}
+
+.input-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#todo-input {
+  width: calc(100% - 22px);
+  background-color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc; 
+}
+
+input::placeholder {
+  color: rgb(170, 170, 170);
+  font-style: italic;
+}
+
+.todo-list,
+.done-list {
+  padding: 0;
+}
+
+.todo-list li,
+.done-list li {
+  margin-bottom: 10px;
+  padding: 10px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+
+.clear-btn,
+.delete-btn {
+  cursor: pointer;
+  margin-left: 5px;
+  background-color: #e1e8f2; 
+  border: none; 
+  padding: 5px 10px;
+}
+
+.list-column {
+  flex: 1;
+  padding: 10px;
+}
+
+.lists-container {
+  display: flex;
+  margin-top: 20px; 
+}
+
+.my-underline {
+  text-decoration: underline;
+  text-decoration-thickness : 2px;
+  text-decoration-color : #d4e0ee;
+}
